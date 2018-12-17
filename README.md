@@ -46,6 +46,12 @@ Use of optimization (Adam, RMSProp, …) in each model necessitates averaging at
    * Learning efficiency drops.
    * Zhang et al., 2016 Suggest soft Sync and limiting the staleness as the possible solution. 
 
+### Quick Guide on when to use the data/ model parallesem
+The following Graph does indicate the following
+* Use single GPU if the data set and Model fit on the GPU memory.
+* Use Multi GPU or system If the Model is modrate but the data set is large (potential under fitting)
+* Use Multi GPU or system If the data set is relatively small but the model is large.(i.e. ResNet200 or deeper)
+* If the data set is very large and the model is very deep then utilize Data and model parallelisem
 
 ### Part List
 * Motherboard: Z10PE-08WS. 
