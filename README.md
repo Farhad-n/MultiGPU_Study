@@ -1,7 +1,32 @@
 # MultiGPU_Study
 Build a Deep Learning (DL) Server and Test 
 ## Farhad Navid
-This is a different report, The purpose was to build a DL server to continue the journey in ML and DL utilizing the model and data parralilisems. A recipe for building a DL server is included and the programs used to validate the framework version installed on the server.  The main Point was to explore the Data parralisem as a starter.
+The purpose of this post is to serve as a guide on how to build a DL server with multiple GPUs to further enhance the understanding of the "model" and "data" parallelisms. A hardware parts list in the repository is merely a suggestion for building a server.  Additionally, we have included the programs used to validate the build and framework versions.  The powerpoint file does contain more details on the hardware selection and software revisions.  The main point was to explore the Data parallelism as a starter.
+
+### Data Parallelism:
+* The model is copied on all GPUs or Distributed Systems, 
+* Each GPU gets a different portion of the data. ( mini_batch= Batch / num_GPU).
+* The Results from each GPU are combined after each mini_batch.
+
+**Visualization of Data parallelism**
+![parallelisem](https://github.com/Farhad-n/MultiGPU_Study/blob/master/image/Parallelism.png)
+   * Parameter averaging (In-Graph replication)
+      1. Initialize the model parameters (Weights, biases) 
+      2. Distribute Copy of parameters to all GPU’s
+      3. Train with mini_batch.
+      4. Global Parameter to average each GPU’s parameters.
+      5. Repeat Steps ii-iv while there is data to process. 
+      
+![data_par](https://github.com/Farhad-n/MultiGPU_Study/blob/master/image/Data_Parl_avg.png)
+
+### Pitfalls of Synchronous Parameter averaging
+
+**Every iteration(minibatch averaging):**  This method has the potential to have a significant overhead (communication between CPU and GPU) especially with the larger number of GPU's. All models in GPUs have to complete the training and the parameter send to the CPU to get averaged, updated and fed back to the GPUs. 
+
+**Infrequent averaging:**  local parameter may diverge resulting a poor model after averaging.
+Some preliminary research (Su et al., 2015) suggest averaging in about ~10 mini batches can have a reasonable performance at the cost of some reduced model accuracy.
+
+Use of optimization (Adam, RMSProp, …) in each model necessitates averaging at the cost of increased network transfer, Resulting in a better convergence.   
 
 ### Part List
 * Motherboard: Z10PE-08WS. 
@@ -14,7 +39,7 @@ This is a different report, The purpose was to build a DL server to continue the
 * RAC: 4U Rack Mount Chassis. 
 
 ### Software Configuration 
-The following recommendation are the a good starting point:
+The following recommendation are good starting point:
 * OS: Ubuntu 16.04.5 LTS
 * Python 3.5.2 
 * Keras 2.2.4
