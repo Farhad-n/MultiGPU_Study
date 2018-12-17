@@ -29,6 +29,21 @@ Some preliminary research (Su et al., 2015) suggest averaging in about ~10 mini 
 
 Use of optimization (Adam, RMSProp, …) in each model necessitates averaging at the cost of increased network transfer, Resulting in a better convergence.   
 
+**Optimization Base averaging** (Between-Graph replication)  Preferred approach.
+Similar to the parameter averaging. Use the Gradient post learning rate,  instead of parameters from model. 
+The Synchronous averaging holds true for for all optimizers such as SGD (Stochastic Gradient Decent).  
+l=1/n. where n number of GPUs
+Potential downfall :
+Large number of GPU’s delays the update lowers the speed, if the GPU are not the similar can cause delay in updating.
+Updating Asynchronous Update as soon as the parameters are ready. 
+For n GPU on average the gradient on average could be N step out of date prior to adding to global parameter vector.
+ Benefit : Gain higher throughput, Speed up the parameter updates.
+Downfall Stall Gradient: 
+High gradient stall Slow Down the network convergence.
+Learning efficiency drops.
+There are various solutions for minimize the effect ( such as soft sync, limit the staleness. Etc)
+
+
 ### Part List
 * Motherboard: Z10PE-08WS. 
 * CPU: Xeon E5 V4 2620.  
