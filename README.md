@@ -24,8 +24,9 @@ The following recommendation are the a good starting point:
 * OpenCV 2.4.9.1
 ### Files
 * FarhadNavid_final.pptx  contains details of the study with summary result.
-* Mnist_Multi_GPU_keras.py  This file was used to train the mnist data set on one or two GPU using Keras frame work.
-* 
+* Mnist_multi_gpu_keras.py  This file was used to train the mnist data set on one or two GPU using Keras frame work.
+* Multi_gpu.py this file is a utility file with two function (get_available_gpus and make_parallel).
+* pytorch_multi_gpu
 
 # Conclusion
 * Small Data set and small network the improvement in training time utilizing two GPU is about 1.6 improvement (248.3/154.2). 
