@@ -9,6 +9,7 @@ The purpose of this post is to serve as a guide on how to build a DL server with
 * The Results from each GPU are combined after each mini_batch.
 
 **Visualization of Data parallelism**
+
 ![parallelisem](https://github.com/Farhad-n/MultiGPU_Study/blob/master/image/parallel.png)
    * Parameter averaging (In-Graph replication)
       1. Initialize the model parameters (Weights, biases) 
