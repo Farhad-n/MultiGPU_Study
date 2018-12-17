@@ -40,8 +40,12 @@ The following recommendation are the a good starting point:
 * Zhang, W., Gupta, S., Lian, X., & Liu, J. (2016). Staleness-aware async-SGD for distributed deep learning. In Proceedings of the Twenty-Fifth International Joint Conference on Artificial Intelligence (IJCAI'16), 2350-2356. Retrieved from https://arxiv.org/pdf/1511.05950.pdf. 
 
 [TensorFlow](https://www.tensorflow.org/tutorials/images/deep_cnn)
+
 [PyTorch](https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html)
+
 [Mnist-Multi](https://github.com/normanheckscher/mnist-multi-gpu)
+
 [Cifar10-Multi](https://github.com/bearpaw/pytorch-classification)
+
 
  
