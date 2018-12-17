@@ -46,12 +46,13 @@ Use of optimization (Adam, RMSProp, …) in each model necessitates averaging at
    * Learning efficiency drops.
    * Zhang et al., 2016 Suggest soft Sync and limiting the staleness as the possible solution. 
 
-### Quick Guide on when to use the data/ model parallesem
-The following Graph does indicate the following
-* Use single GPU if the data set and Model fit on the GPU memory.
-* Use Multi GPU or system If the Model is modrate but the data set is large (potential under fitting)
-* Use Multi GPU or system If the data set is relatively small but the model is large.(i.e. ResNet200 or deeper)
-* If the data set is very large and the model is very deep then utilize Data and model parallelisem
+### Quick Guide on when to use the data/ model parallelism
+The following Graph is for high-level point of view and does suggest the following:
+![what to use](https://github.com/Farhad-n/MultiGPU_Study/blob/master/image/when_2_use.png)
+* Use single GPU if the dataset and Model fit on the GPU memory.
+* Use Multi GPU or system If the Model is moderate but the data set is large (potential under fitting)
+* Use Multi GPU or system If the data set is relatively small, but the model is large.(i.e. ResNet200 or deeper)
+* If the data set is extensive and the model is very deep then utilize Data and model parallelism.
 
 ### Part List
 * Motherboard: Z10PE-08WS. 
@@ -103,6 +104,3 @@ The following recommendation are good starting point:
 
 [Cifar10-Multi](https://github.com/bearpaw/pytorch-classification)
 * Excellent source for PyTorch classification utilizing multi GPU with both CIFAR10 data and imagenet. However, for this study only used the cifar10dataset and modified the directories to use only the vgg19_bn model (VGG 19 with Batch Normalization). The directory structure was modified locally on the server to run only the vgg19_bn model with One and two GPU.  Result Outlined in conclusion.    
-
-
- 
