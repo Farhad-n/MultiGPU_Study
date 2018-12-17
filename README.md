@@ -43,9 +43,11 @@ The following recommendation are the a good starting point:
 
 [PyTorch](https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html)
 
-[Mnist-Multi](https://github.com/normanheckscher/mnist-multi-gpu)
+[Mnist-Multi](https://github.com/normanheckscher/mnist-multi-gpu) 
+* Perfect reference for Multi GPU in Keras. Used only the Keras portion of the code and modified the model section to run a personal model. Result outlined in conclusion
 
 [Cifar10-Multi](https://github.com/bearpaw/pytorch-classification)
+* Excellent source for PyTorch classification utilizing multi GPU with both CIFAR10 data and imagenet. However, for this study only used the cifar10dataset and modified the directories to use only the vgg19_bn model (VGG 19 with Batch Normalization). The directory structure was modified locally on the server to run only the vgg19_bn model with One and two GPU.  Result Outlined in conclusion.    
 
 
  
