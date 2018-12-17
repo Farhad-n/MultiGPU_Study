@@ -1,7 +1,8 @@
 # MultiGPU_Study
 Build a Deep Learning (DL) Server and Test 
 ## Farhad Navid
-This post has a recipe for building a DL server With some tidbits on the choices.  
+This is a different report, The purpose was to build a DL server to continue the journey in ML and DL utilizing the model and data parralilisems. A recipe for building a DL server is included and the programs used to validate the framework version installed on the server.  The main Point was to explore the Data parralisem as a starter.
+
 ### Part List
 * Motherboard: Z10PE-08WS. 
 * CPU: Xeon E5 V4 2620.  
@@ -23,10 +24,12 @@ The following recommendation are the a good starting point:
 * CUDA V9.0.176
 * OpenCV 2.4.9.1
 ### Files
-* FarhadNavid_final.pptx  contains details of the study with summary result.
-* Mnist_multi_gpu_keras.py  This file was used to train the mnist data set on one or two GPU using Keras frame work.
-* Multi_gpu.py this file is a utility file with two function (get_available_gpus and make_parallel).
-* pytorch_multi_gpu
+* FarhadNavid_final.pptx contains details of the study with a summary result.
+* Mnist_multi_gpu_keras.py  This file is used to train the "mnist" data set on one or two GPU using Keras framework.
+* Multi_gpu.py This file is a utility file with two functions (get_available_gpus and make_parallel).
+* Cifar-fn.py This file is a modified version of the reference files which uses the CIFAR10 dataset and VGG 19 Model to run on one and two GPU using the PyTorch framework. 
+* vgg.py file is the strip down version of the VGG file which has only two models on it VGG19 and VGG19_bn (batchNormalization).
+* Test Folder. This folder contains some of the files used to validate the functionality of the Keras version 2.2.4 and TensorFlow ver 1.12.0.   
 
 # Conclusion
 * Small Data set and small network the improvement in training time utilizing two GPU is about 1.6 improvement (248.3/154.2). 
